@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eff1ed;
+  color: #542344;
+}
+
+.header {
+  /* position: absolute;
+  top: 0;
+  left: 0; */
+  width: 100vw;
+  min-height: 30vh;
+  background: rgb(113, 119, 68);
+  background: radial-gradient(
+    circle,
+    rgba(55, 61, 32, 1) 0%,
+    rgba(113, 119, 68, 1) 100%
+  );
+  color: #eff1ed;
+  margin-bottom: 2vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 15vmin;
+  box-sizing: initial;
+}
+
+h1 {
+  font-size: 6vmin;
+}
+
+.h1 {
+  margin-bottom: 1vh;
+  box-sizing: initial;
+}
+
+.nettsider {
+  font-size: 4.5vmin;
+}
