@@ -1,46 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LilleAila Github</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="./jquery.js"></script>
-</head>
+    <link rel="stylesheet" href="style.css" />
 
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
     <div class="header">
-        <span class="headerSpan">LilleAila</span>
+      <img class="avatar" />
+      <div class="text">
+        <h1 class="username">Username</h1>
+        <span class="bio"></span>
+        <span class="reposCount"></span>
+      </div>
     </div>
 
     <div class="app">
-        <h1 class="h1">Nettsider:</h1>
-        <ul class="nettsider">
-        </ul>
+      <h1 class="reposText">Repositories:</h1>
+      <div class="repos"></div>
     </div>
 
-    <script>
-        function cfl(str) {
-            return str.slice(0, 1).toUpperCase() + str.slice(1);
-        }
-
-        $.ajax({
-            dataType: "json",
-            type: "get",
-            url: "https://api.github.com/users/LilleAila/repos",
-            success: function (data) {
-                console.log(data);
-                for (var i = 0; i < data.length; i++) {
-                    $(".nettsider").append(`<li><a href="https://lilleaila.github.io/${data[i].html_url.split("/")[data[i].html_url.split("/").length - 1]}">${cfl(data[i].name)}</a></li>`);
-                }
-            },
-            error: function () {
-                console.log("Feil");
-            }
-        })
-    </script>
-</body>
-
+    <script src="./jquery.js"></script>
+    <script src="./script.js"></script>
+  </body>
 </html>
