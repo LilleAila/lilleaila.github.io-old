@@ -31,10 +31,10 @@ $.ajax({
   type: "get",
   url: `https://api.github.com/users/${username}`,
   success: (data) => {
-      $(".avatar").attr("src", data.avatar_url);
-      $(".username").text(data.name);
-      $(".bio").text(data.bio);
-      $(".reposCount").text(`Repos: ${data.public_repos}`);
+    $(".avatar").attr("src", data.avatar_url);
+    $(".username").text(data.name).attr("href", data.html_url);
+    $(".bio").text(data.bio);
+    $(".reposCount").text(`Repos: ${data.public_repos}`);
   },
   error: console.log,
 });

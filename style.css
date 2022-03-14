@@ -29,11 +29,12 @@ body {
 .header {
   width: 100vw;
   height: 30vmin;
-  background: rgb(113, 119, 68);
-  background: radial-gradient(
-    circle,
-    rgba(55, 61, 32, 1) 0%,
-    rgba(113, 119, 68, 1) 100%
+  background: rgb(44, 80, 181);
+  background: linear-gradient(
+    90deg,
+    rgba(44, 80, 181, 1) 0%,
+    rgba(0, 173, 203, 1) 50%,
+    rgba(44, 80, 181, 1) 100%
   );
   color: #eff1ed;
   margin-bottom: 2vh;
@@ -57,6 +58,17 @@ body {
   font-size: 9vmin;
   font-weight: 900;
   font-family: "Indie Flower", cursive;
+  text-decoration: none;
+  color: var(--link);
+  cursor: pointer;
+}
+
+.username:visited {
+  color: var(--link);
+}
+
+.username:hover {
+  color: var(--link-hover);
 }
 
 .bio {
@@ -76,7 +88,7 @@ body {
 /* Repos */
 
 .reposText {
-  font-size: 4vmin;
+  font-size: 7vmin;
   font-weight: 900;
 }
 
