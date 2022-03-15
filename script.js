@@ -19,7 +19,11 @@ $.ajax({
         .addClass("name")
         .text(current.name)
         .attr("href", current.html_url);
-      const language = $("<span>").addClass("language").text(current.language);
+      const language = $("<span>")
+        .addClass("language")
+        .text(
+          current.description != null ? current.description : current.language
+        );
 
       const element = $("<div>").addClass("repo").append(name).append(language);
 
