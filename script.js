@@ -3,10 +3,29 @@ const urlParams = new URLSearchParams(queryString);
 
 const username = urlParams.get("user") || "LilleAila";
 
+let reposCount;
+
 $.ajax({
   dataType: "json",
   type: "get",
-  url: `https://api.github.com/users/${username}/repos`,
+  url: `https://api.github.com/users/${username}`,
+  success: (data) => {
+    $(".avatar").attr("src", data.avatar_url);
+    $(".username").text(data.login).attr("href", data.html_url);
+    $(".bio").text(data.bio);
+    reposCount = data.public_repos;
+    $(".reposCount").text(`Repos: ${reposCount}`);
+  },
+  error: () => {
+    alert("User does not exist");
+    setUser();
+  },
+});
+
+$.ajax({
+  dataType: "json",
+  type: "get",
+  url: `https://api.github.com/users/${username}/repos?per_page=250`,
   success: (data) => {
     // console.log(data);
 
@@ -31,22 +50,6 @@ $.ajax({
     }
   },
   error: console.log,
-});
-
-$.ajax({
-  dataType: "json",
-  type: "get",
-  url: `https://api.github.com/users/${username}`,
-  success: (data) => {
-    $(".avatar").attr("src", data.avatar_url);
-    $(".username").text(data.login).attr("href", data.html_url);
-    $(".bio").text(data.bio);
-    $(".reposCount").text(`Repos: ${data.public_repos}`);
-  },
-  error: () => {
-    alert("User does not exist");
-    setUser();
-  },
 });
 
 const setUser = () => {
