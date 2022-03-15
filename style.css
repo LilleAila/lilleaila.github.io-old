@@ -1,9 +1,14 @@
 :root {
-  --bg: #eff1ed;
-  --fg: #464242;
+  --fg: #eff1ed;
+  --bg: #464242;
 
-  --link: #2b2a31;
-  --link-hover: #48474e;
+  --link: #e7e7e7;
+  --link-hover: #c8c7d1;
+
+  --gr1-1: rgba(44, 80, 181, 1);
+  --gr1-2: rgba(0, 173, 203, 1);
+  --gr2-1: rgba(0, 150, 181, 1);
+  --gr2-2: rgba(0, 203, 168, 1);
 }
 
 * {
@@ -32,9 +37,9 @@ body {
   background: rgb(44, 80, 181);
   background: linear-gradient(
     90deg,
-    rgba(44, 80, 181, 1) 0%,
-    rgba(0, 173, 203, 1) 50%,
-    rgba(44, 80, 181, 1) 100%
+    var(--gr1-1) 0%,
+    var(--gr1-2) 50%,
+    var(--gr1-1) 100%
   );
   color: #eff1ed;
   margin-bottom: 2vh;
@@ -83,6 +88,11 @@ body {
   height: 25vmin;
   width: 25vmin;
   border-radius: 50%;
+  cursor: pointer;
+}
+
+.avatar:hover {
+  filter: brightness(0.7);
 }
 
 /* Repos */
@@ -102,9 +112,9 @@ body {
   background: rgb(0, 150, 181);
   background: linear-gradient(
     90deg,
-    rgba(0, 150, 181, 1) 0%,
-    rgba(0, 203, 168, 1) 50%,
-    rgba(0, 150, 181, 1) 100%
+    var(--gr2-1) 0%,
+    var(--gr2-2) 50%,
+    var(--gr2-1) 100%
   );
 
   border-radius: 5vmin 5vmin 5vmin 5vmin;
